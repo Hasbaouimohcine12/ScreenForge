@@ -1,0 +1,7 @@
+* text=auto eol=lf
+*.sln text eol=crlf
+*.cs text diff=csharp
+*.axaml text
+*.csproj text
+*.props text
+*.targets text

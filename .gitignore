@@ -1,0 +1,19 @@
+# Build/artefatos (.NET/Avalonia)
+**/bin/
+**/obj/
+**/out/
+**/artifacts/
+**/runtimes/
+
+# Binários e símbolos
+*.dll
+*.exe
+*.pdb
+*.cache
+*.log
+*.tmp
+
+# IDEs
+.vs/
+*.user
+*.suo

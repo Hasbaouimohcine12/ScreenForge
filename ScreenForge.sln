@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScreenForge.App", "ScreenForge.App\ScreenForge.App.csproj", "{30078D51-AC94-4D46-812B-86293F4BE23A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScreenForge.Core", "ScreenForge.Core\ScreenForge.Core.csproj", "{B27A0CA5-9811-4798-94DC-1764C681D6BC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScreenForge.FFmpeg", "ScreenForge.FFmpeg\ScreenForge.FFmpeg.csproj", "{3994C816-3A3B-46E7-B19B-9786792397F9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{30078D51-AC94-4D46-812B-86293F4BE23A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30078D51-AC94-4D46-812B-86293F4BE23A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30078D51-AC94-4D46-812B-86293F4BE23A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30078D51-AC94-4D46-812B-86293F4BE23A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B27A0CA5-9811-4798-94DC-1764C681D6BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B27A0CA5-9811-4798-94DC-1764C681D6BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B27A0CA5-9811-4798-94DC-1764C681D6BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B27A0CA5-9811-4798-94DC-1764C681D6BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3994C816-3A3B-46E7-B19B-9786792397F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3994C816-3A3B-46E7-B19B-9786792397F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3994C816-3A3B-46E7-B19B-9786792397F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3994C816-3A3B-46E7-B19B-9786792397F9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

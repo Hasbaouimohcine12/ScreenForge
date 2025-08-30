@@ -1,0 +1,67 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:ScreenForge.App.ViewModels"
+        xmlns:views="using:ScreenForge.App.Views"
+        x:Class="ScreenForge.App.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        Width="640" Height="160" CanResize="False" Title="ScreenForge">
+
+  <!-- Recursos (objetos com chave) -->
+  <Window.Resources>
+    <views:BooleanToRecStopConverter x:Key="RecStopConv" />
+    <views:BooleanToTagConverter     x:Key="RecTagConv" />
+  </Window.Resources>
+
+  <!-- Estilos (devem ficar em Window.Styles) -->
+  <Window.Styles>
+    <!-- base -->
+    <Style Selector="Button#RecBtn">
+      <Setter Property="FontSize" Value="18"/>
+      <Setter Property="Padding" Value="12,8"/>
+      <Setter Property="MinWidth" Value="140"/>
+      <Setter Property="CornerRadius" Value="12"/>
+      <Setter Property="Background" Value="#2b2b2b"/>
+      <Setter Property="Foreground" Value="#ffffff"/>
+      <Setter Property="BorderBrush" Value="#444"/>
+      <Setter Property="BorderThickness" Value="1"/>
+    </Style>
+    <Style Selector="Button#RecBtn:pointerover">
+      <Setter Property="Opacity" Value="0.95"/>
+    </Style>
+    <Style Selector="Button#RecBtn:pressed">
+      <Setter Property="Opacity" Value="0.85"/>
+    </Style>
+    <!-- quando gravando -->
+    <Style Selector="Button#RecBtn[Tag=recording]">
+      <Setter Property="Background" Value="#D72638"/>
+    </Style>
+  </Window.Styles>
+
+  <Grid RowDefinitions="Auto,Auto,Auto" ColumnDefinitions="Auto,*">
+    <!-- Linha 1: REC/STOP + Monitores -->
+    <StackPanel Grid.Row="0" Grid.ColumnSpan="2" Orientation="Horizontal" Spacing="10" Margin="16,16,16,8" VerticalAlignment="Center">
+      <Button Name="RecBtn"
+              Content="{Binding IsRecording, Converter={StaticResource RecStopConv}}"
+              Tag="{Binding IsRecording, Converter={StaticResource RecTagConv}}"
+              Command="{Binding ToggleRecordCommand}" />
+      <ComboBox Width="380"
+                ItemsSource="{Binding Monitors}"
+                SelectedItem="{Binding SelectedMonitor}">
+        <ComboBox.ItemTemplate>
+          <DataTemplate>
+            <TextBlock Text="{Binding Label}"/>
+          </DataTemplate>
+        </ComboBox.ItemTemplate>
+      </ComboBox>
+    </StackPanel>
+
+    <!-- Linha 2: pasta -->
+    <StackPanel Grid.Row="1" Grid.ColumnSpan="2" Orientation="Horizontal" Spacing="8" Margin="16,0,16,8" VerticalAlignment="Center">
+      <Button Content="Escolher pasta..." Command="{Binding ChooseFolderCommand}"/>
+      <TextBlock Text="{Binding SaveFolder}" VerticalAlignment="Center"/>
+    </StackPanel>
+
+    <!-- Linha 3: status -->
+    <TextBlock Grid.Row="2" Grid.ColumnSpan="2" Text="{Binding Status}" Margin="16,0,16,16"/>
+  </Grid>
+</Window>
